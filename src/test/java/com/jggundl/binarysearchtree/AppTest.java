@@ -22,4 +22,13 @@ public class AppTest {
         assertTrue(bst.getHead().getValue() == 10);
     }
 
+    @Test
+    public void addTwoValuesTest() {
+        final BinarySearchTree bst = new BinarySearchTree();
+        bst.addValue(10);
+        bst.addValue(5);
+        assertTrue(bst.getHead().getValue() == 10);
+        assertTrue(bst.getHead().getLeft().getValue() == 5);
+    }
+
 }
