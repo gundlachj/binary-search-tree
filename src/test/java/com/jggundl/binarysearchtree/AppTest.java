@@ -17,18 +17,54 @@ public class AppTest {
 
     @Test
     public void addSingleValueTest() {
+        final int EXPECTED_HEAD_VALUE = 10;
+
         final BinarySearchTree bst = new BinarySearchTree();
-        bst.addValue(10);
-        assertTrue(bst.getHead().getValue() == 10);
+        bst.addValue(EXPECTED_HEAD_VALUE);
+
+        assertTrue(bst.getHead().getValue() == EXPECTED_HEAD_VALUE);
     }
 
     @Test
-    public void addTwoValuesTest() {
+    public void addLeftValueTest() {
+        final int EXPECTED_HEAD_VALUE = 10;
+        final int EXPECTED_LEFT_VALUE = 5;
+
         final BinarySearchTree bst = new BinarySearchTree();
-        bst.addValue(10);
-        bst.addValue(5);
-        assertTrue(bst.getHead().getValue() == 10);
-        assertTrue(bst.getHead().getLeft().getValue() == 5);
+
+        bst.addValue(EXPECTED_HEAD_VALUE);
+        bst.addValue(EXPECTED_LEFT_VALUE);
+        assertTrue(bst.getHead().getValue() == EXPECTED_HEAD_VALUE);
+        assertTrue(bst.getHead().getLeft().getValue() == EXPECTED_LEFT_VALUE);
+    }
+
+    @Test
+    public void addRightValueTest() {
+        final int EXPECTED_HEAD_VALUE = 10;
+        final int EXPECTED_RIGHT_VALUE = 15;
+
+        final BinarySearchTree bst = new BinarySearchTree();
+
+        bst.addValue(EXPECTED_HEAD_VALUE);
+        bst.addValue(EXPECTED_RIGHT_VALUE);
+        assertTrue(bst.getHead().getValue() == EXPECTED_HEAD_VALUE);
+        assertTrue(bst.getHead().getRight().getValue() == EXPECTED_RIGHT_VALUE);
+    }
+
+    @Test
+    public void addLeftAndRightValuesTest() {
+        final int EXPECTED_HEAD_VALUE = 10;
+        final int EXPECTED_LEFT_VALUE = 5;
+        final int EXPECTED_RIGHT_VALUE = 15;
+
+        final BinarySearchTree bst = new BinarySearchTree();
+        bst.addValue(EXPECTED_HEAD_VALUE);
+        bst.addValue(EXPECTED_LEFT_VALUE);
+        bst.addValue(EXPECTED_RIGHT_VALUE);
+
+        assertTrue(bst.getHead().getValue() == EXPECTED_HEAD_VALUE);
+        assertTrue(bst.getHead().getLeft().getValue() == EXPECTED_LEFT_VALUE);
+        assertTrue(bst.getHead().getRight().getValue() == EXPECTED_RIGHT_VALUE);
     }
 
 }
